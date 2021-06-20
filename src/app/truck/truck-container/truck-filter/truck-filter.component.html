@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-2" (click)="filterChanged(0)">
+        <div class="center">
+            <p>Total Trucks</p>
+            {{allTrucks.length}}
+        </div>
+    </div>
+    <div class="col-md-2" (click)="filterChanged(1)">
+        <div class="center">
+            <p>Running Trucks</p>
+            {{runningTruckCount}}
+        </div>
+    </div>
+    <div class="col-md-2" (click)="filterChanged(2)">
+        <div class="center">
+            <p>Stopped Trucks</p>
+            {{stoppedTruckCount}}
+        </div>
+    </div>
+    <div class="col-md-2" (click)="filterChanged(3)">
+        <div class="center">
+            <p>Idle Trucks</p>
+            {{idleTruckCount}}
+        </div>
+    </div>
+    <div class="col-md-2" (click)="filterChanged(4)">
+        <div class="center">
+            <p>Error Trucks</p>
+            {{errorTruckCount}}
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="search-container">
+            <!--<p-multiSelect [style]="{'width': '94%'}" [options]="cities1" [(ngModel)]="selectedCities1"></p-multiSelect>-->
+        </div>
+    </div>
+</div>

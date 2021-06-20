@@ -1,0 +1,76 @@
+<div class="list-container">
+    <ng-template [ngIf]="showRunningTrucks || showAllTrucks">
+        <div class="left-pad" *ngFor="let truck of runningTrucks">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>{{truck.truckNumber}}</strong>
+                </div>
+                <div class="col-md-6">
+                    <div class="font-color">{{getTimeDifference(truck.lastWaypoint.createTime)}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="font-color">{{getStatus(truck)}}</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="font-color">{{truck.lastWaypoint.speed}}</div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template [ngIf]="showStoppedTrucks || showAllTrucks">
+        <div class="left-pad" *ngFor="let truck of stoppedTrucks">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>{{truck.truckNumber}}</strong>
+                </div>
+                <div class="col-md-6">
+                    <div class="font-color">{{getTimeDifference(truck.lastWaypoint.createTime)}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="font-color">{{getStatus(truck)}}</div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template [ngIf]="showIdleTrucks || showAllTrucks">
+        <div class="left-pad" *ngFor="let truck of idleTrucks">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>{{truck.truckNumber}}</strong>
+                </div>
+                <div class="col-md-6">
+                    <div class="font-color">{{getTimeDifference(truck.lastWaypoint.createTime)}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="font-color">{{getStatus(truck)}}</div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template [ngIf]="showErrorTrucks || showAllTrucks">
+        <div class="left-pad-error error-list" *ngFor="let truck of errorTrucks">
+            <div class="row">
+                <div class="col-md-7">
+                    <strong>{{truck.truckNumber}}</strong>
+                </div>
+                <div class="col-md-5">
+                    <div>{{getTimeDifference(truck.lastWaypoint.createTime)}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div>{{getStatus(truck)}}</div>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+        </div>
+    </ng-template>
+</div>

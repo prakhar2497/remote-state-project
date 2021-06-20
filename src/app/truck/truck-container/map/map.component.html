@@ -1,0 +1,7 @@
+<div class="map-container">
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <div *ngFor="let truck of selectedCategoryList">
+            <agm-marker [latitude]="truck.lastWaypoint.lat" [longitude]="truck.lastWaypoint.lng" [color]="white"></agm-marker>
+        </div>
+    </agm-map>
+</div>

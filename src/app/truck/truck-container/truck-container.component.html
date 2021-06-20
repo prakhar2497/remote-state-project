@@ -1,0 +1,12 @@
+<app-truck-filter [runningTruckCount]="runningTrucks.length" [stoppedTruckCount]="stoppedTrucks.length"
+    [idleTruckCount]="idleTrucks.length" [errorTruckCount]="errorTrucks.length" [allTrucks]="allTrucks"
+    (filterSelectedEvent)="filterChange($event)"></app-truck-filter>
+<div class="row">
+    <div class="col-md-3">
+        <app-truck-list [runningTrucks]="runningTrucks" [stoppedTrucks]="stoppedTrucks" [idleTrucks]="idleTrucks"
+        [errorTrucks]="errorTrucks" [filterSelected]="currentlyAppliedFilter"></app-truck-list>
+    </div>
+    <div class="col-md-9">
+        <app-map [selectedCategoryList]="selectedCategoryList"></app-map>
+    </div>
+</div>
